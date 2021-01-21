@@ -78,7 +78,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Tyler Hill</h1>
-      <p><span class="typed" data-typed-items="Bioinformatician, Student, Analyst, Developer, Climber"></span></p>
+      <p><span class="typed" data-typed-items="Bioinformatician, Student, Outdoor Enthusiast"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -90,11 +90,11 @@
 
         <div class="section-title">
           <h2>About</h2>
-          <p>A life well lived is spent bettering oneself and the world around them.
-            I take this ideal to heart everyday by striving to always be improving myself
-            and furthering my skills. Currently I am enrolled in a M.Sc in Bioinformatics
-            at Northeastern University and am looking for summer 2021 internship opportunities
-            in the Seattle area.
+          <p>I believe a life well lived is spent bettering oneself and the world around them.
+            I take this ideal to heart everyday by striving to always be improving myself, furthering
+            my skills in programming and bioinformatics to hopefully help make a difference one day.
+            Currently I am enrolled in a M.Sc in Bioinformatics at Northeastern University and am
+            looking for summer 2021 internship opportunities in the Seattle area.
           </p>
         </div>
 
@@ -140,10 +140,11 @@
           <p>
             My programming journey began in 2015 with Harvard's free online course CS50.
             I soon became fascinated with the study of computer science and how
-            computational power can be leveraged to tackle complex problems. Python
-            is where I am most comfortable but I also love the flexibility
-            of working in R for data analysis and bash for automating work flows.
+            computational power can be leveraged to tackle complex problems.
           </p>
+          <!--Python
+            is where I am most comfortable but I also love the flexibility
+            of working in R for data analysis and bash for automating work flows.-->
         </div>
 
         <div class="row skills-content">
@@ -218,6 +219,9 @@
           <p>
             I am constantly working on new projects to broaden my skills and knowledge.
           </p>
+          <p>
+            To learn more hover over an image and click the plus icon or follow the link to the project itself.
+          </p>
         </div>
 
         <div class="row" data-aos="fade-up">
@@ -225,10 +229,12 @@
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-python">Python</li>
-              <li data-filter=".filter-R">R</li>
+              <li data-filter=".filter-r">R</li>
               <li data-filter=".filter-sql">SQL</li>
+              <!--
               <li data-filter=".filter-ml">Machine Learning</li>
               <li data-filter=".filter-data">Data Analysis</li>
+              -->
             </ul>
           </div>
         </div>
@@ -251,8 +257,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/gm-screen.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/gm-screen-summary.jpg" class="venobox" title="GM Screen"><i
-                    class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/gm-screen-summary.jpg" class="venobox"><i class="bx bx-plus"></i></a>
                 <a href="https://production-gm-screen.herokuapp.com/" target="_blank" rel="noopener noreferrer"
                   title="Visit the app"><i class="bx bx-link"></i></a>
               </div>
@@ -263,8 +268,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/rosalind-logo.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/rosalind-summary.jpg" class="venobox" title="App 2"><i
-                    class="bx bx-plus"></i></a>
+                <a href="assets/img/portfolio/rosalind-summary.jpg" class="venobox"><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/tylerhill90/rosalind-solutions" target="_blank" rel="noopener noreferrer"
                   title="Open in GitHub"><i class="bx bx-link"></i></a>
               </div>
@@ -275,7 +279,7 @@
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/snake-ai.gif" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/snake-ai-summary.jpg" data-gall="portfolioGallery" class="venobox"
+                <a href="assets/img/portfolio/snake-ai-summary.jpg" class="venobox"
                   title="Snake AI with A* and NEAT machine learning"><i class="bx bx-plus"></i></a>
                 <a href="https://github.com/tylerhill90/snake-ai" target="_blank" rel="noopener noreferrer"
                   title="Open in GitHub"><i class="bx bx-link"></i></a>
@@ -283,13 +287,14 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-r filter-data">
             <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+              <img src="assets/img/portfolio/death-saves.png" class="img-fluid" alt="">
               <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                <a href="assets/img/portfolio/death-saves-summary.jpg" class="venobox" title="Web 2"><i
+                    class="bx bx-plus"></i></a>
+                <a href="https://github.com/tylerhill90/death-saving-throw-probabilities/blob/master/death_save_probs.md"
+                  target="_blank" rel="noopener noreferrer" title="Open in GitHub"><i class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -534,38 +539,34 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="assets/forms/contact.php" method="post" role="form" class="php-email-form">
+            <form method="post" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4"
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" required
                     data-msg="Please enter at least 4 chars" />
                   <div class="validate"></div>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" data-rule="email"
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" required
                     data-msg="Please enter a valid email" />
                   <div class="validate"></div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4"
+                <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" required
                   data-msg="Please enter at least 8 chars of subject" />
                 <div class="validate"></div>
               </div>
               <div class="form-group">
                 <label for="name">Message</label>
                 <textarea class="form-control" name="message" rows="10" data-rule="required"
-                  data-msg="Please write something for us"></textarea>
+                  data-msg="Please write something for us" required></textarea>
                 <div class="validate"></div>
               </div>
-              <div class="mb-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
+              <p>Page will reload when email is sent.</p>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
