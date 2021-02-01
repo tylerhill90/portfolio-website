@@ -78,7 +78,7 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Tyler Hill</h1>
-      <p><span class="typed" data-typed-items="Bioinformatician, Student, Outdoor Enthusiast"></span></p>
+      <p><span class="typed" data-typed-items="Bioinformatician, Student, Mountaineer"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -92,7 +92,7 @@
           <h2>About</h2>
           <p>I believe a life well lived is spent bettering oneself and the world around them.
             I take this ideal to heart by striving to always be improving myself in
-            order to hopefully make a difference in the world with my career.<br><br>
+            order to make a difference in the world with my career.<br><br>
             Currently I am enrolled in a M.Sc in Bioinformatics at Northeastern University and am
             looking for summer 2021 internship opportunities in the Seattle area.
           </p>
@@ -107,7 +107,7 @@
             <p class="font-italic">
               I have two major passions in life, learning and the outdoors. My love for these
               activities has taken me all over the world, from studying abroad in New Zealand
-              to scaling the sheer granite walls of Yosemite.
+              to scaling the granite walls of Yosemite.
             </p>
             <div class="row">
               <div class="col-lg-6">
@@ -136,7 +136,7 @@
             My programming journey began in 2015 with Harvard's free online course <a
               href="https://online-learning.harvard.edu/course/cs50-introduction-computer-science?delta=0"
               target="_blank" rel="noopener noreferrer">CS50</a>.
-            I quickly became fascinated with the study of computer science and how
+            I quickly became fascinated with computer science and how
             computational power can be leveraged to tackle complex, meaningful problems.
           </p>
           <!--Python
@@ -249,6 +249,7 @@
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-python">Python</li>
               <li data-filter=".filter-r">R</li>
+              <li data-filter=".filter-javascript">JavaScript</li>
               <li data-filter=".filter-sql">SQL</li>
               <!--
               <li data-filter=".filter-ml">Machine Learning</li>
@@ -272,7 +273,18 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-python filter-sql">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-javascript filter-html">
+            <div class="portfolio-wrap">
+              <img src="assets/img/portfolio/alignment-algs.jpg" class="img-fluid" alt="">
+              <div class="portfolio-links">
+                <a href="assets/img/portfolio/alignment-algs-summary.jpg" class="venobox"><i class="bx bx-plus"></i></a>
+                <a href="{{ url_for('align_algs') }}" target="_blank" rel="noopener noreferrer" title="Visit the app"><i
+                    class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 portfolio-item filter-python filter-sql filter-html filter-javascript">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/gm-screen.png" class="img-fluid" alt="">
               <div class="portfolio-links">
@@ -336,10 +348,9 @@
             <h3 class="resume-title">Sumary</h3>
             <div class="resume-item pb-0">
               <h4>Tyler Hill</h4>
-              <p><em>I have a passion for programming and solving complex biological
-                  problems. My peer recognized work ethic and attention to detail make
-                  me an ideal candidate for hire. I am ready to tackle exciting new
-                  frontiers for your company.</em></p>
+              <p><em>Passionate for programming and solving complex biological
+                  problems. Peer recognized work ethic and communication skills make
+                  for an ideal team member.</em></p>
             </div>
 
             <h3 class="resume-title">Education</h3>
@@ -365,7 +376,7 @@
               <ul>
                 <li>Graduated Cum Laude - 3.77 GPA</li>
                 <li>Minored in Chemistry & Philosophy</li>
-                <li>Helped to re-establish the Biology Club</li>
+                <li>Helped re-establish the Biology Club</li>
                 <li>Teachers Assistant for the following</li>
                 <ul>
                   <li>Intro to Logic</li>
@@ -382,7 +393,7 @@
             </div>
           </div>
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 class="resume-title">Professional Experience</h3>
+            <h3 class="resume-title">Work Experience</h3>
             <div class="resume-item">
               <h4>Assistant General Manager</h4>
               <h5>2019 - 2020</h5>
@@ -407,6 +418,19 @@
                   software</li>
                 <li>Mitigated mountain safety and avalanche risk daily with the aid of explosives and manual ski
                   cutting</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Cellarman</h4>
+              <h5>2016</h5>
+              <p><em>Wander Brewing, Bellingham, WA</em></p>
+              <ul>
+                <li>Assisted in the production and packaging of nationally recognized, award winning beer</li>
+                <li>Safely handled caustic chemicals and pressurized systems for the sterilization of brewing equipment
+                </li>
+                <li>Helped maintain a pristine brewing environment to mitigate against cross contamination</li>
+                <li>Managed the organization of the cold room and warehouse stock as well as outgoing shipments</li>
+
               </ul>
             </div>
             <div class="resume-item">

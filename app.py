@@ -2,7 +2,7 @@
 
 """A website to house my coding portfolio."""
 
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, url_for
 from flask_mail import Mail, Message
 
 app = Flask(__name__, static_folder='./assets')
@@ -28,6 +28,10 @@ def index():
         mail.send(msg)
 
     return render_template('index.html')
+
+@app.route('/alignment-algorithms', methods=['GET', 'POST'])
+def align_algs():
+    return render_template('seq-align.html')
 
 
 if __name__ == '__main__':
