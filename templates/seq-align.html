@@ -86,12 +86,64 @@
                         The general algorithm strategy is as follows:
                     <ol>
                         <li>Determine the scoring scheme.</li>
-                        <li>Construct the scoring matrix and initialize the first row and column with 0's.</li>
-                        <li>Calculate the rest of the scoring matrix.</li>
-                        <li>Traceback recursively from the highest score(s) in the matrix until a score of zero is
-                            reached.</li>
+                        <li>Construct the scoring matrix. Initialize the first
+                            row and column with 0's.
+                        </li>
+                        <li>Calculate the rest of the scoring matrix.
+
+                        </li>
+                        <li>Traceback recursively from the highest score(s) in
+                            the matrix until a score of zero is
+                            reached, following the pointer(s) of each cell
+                            calculated in the previous step.
+                        </li>
+                        <li>
+                            Use the path(s) through the matrix to construct a
+                            formatted alignment.
+                        </li>
                     </ol>
-                    Further details can be found
+                    </ol>
+                    Details of step 3:<br>
+                    Fill in the score of each cell starting in the upper left most
+                    unfilled cell and continuing right through that row before
+                    dropping down a row and starting again in the left most unfilled
+                    cell of the new row. To compute the score of each individual cell
+                    we actually compute three separate scores and take the max. To
+                    compute these scores we do the following:
+                    <ol>
+                        <li>
+                            Look to the cell to the left and add its score to
+                            the gap score since moving up constitutes a gap in
+                            the alignment. Store the result.
+                        </li>
+                        <li>
+                            Look to the cell above and add its score to the gap
+                            score since moving up also constitutes a gap in the
+                            alignment. Store this result as well.
+                        </li>
+                        <li>
+                            Look to the cell diagonally up and left and note
+                            its score.
+                            Compare the respective characters from both sequences
+                            of the cell we are determining the score of. If they
+                            match add the match score to the noted score and if
+                            they don't add the mismatch score. Store this result.
+                        </li>
+                        <li>
+                            Take the max score of the three results computed above.
+                            If the max is less than 0 we actually take a score of
+                            0 instead and then fill in the matrix cell with this value.
+                        </li>
+                        <li>
+                            Lastly, we note where the filled in score came from with
+                            pointers to that cell (left, up, or diagonally left). If
+                            there was a tie in the max score then we store all the
+                            relevant pointers. These pointers allow for recursive
+                            traceback in step 4.
+                        </li>
+                    </ol>
+
+                    Further details can be found on Wikipedia
                     <a href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm" target="_blank"
                         rel="noopener noreferrer">here</a>.
                     </p>
@@ -107,12 +159,59 @@
                     The general algorithm startegy is as follows:
                 <ol>
                     <li>Determine the scoring scheme.</li>
-                    <li>Construct the scoring matrix and initialize the first row and column with the gap score times
-                        the respective sequence position.</li>
+                    <li>
+                        Construct the scoring matrix. Initialize the first row
+                        and column where the position in the
+                        row or column is equal to the gap score times
+                        the respective sequence position.
+                    </li>
                     <li>Calculate the rest of the scoring matrix.</li>
-                    <li>Traceback recursively from the bottom right corner of the matrix to the top left.</li>
+                    <li>
+                        Traceback recursively from the bottom right corner of
+                        the matrix to the top left, following the pointer(s) of
+                        each cell calculated in the previous step.
+                    </li>
+                    <li>
+                        Use the path(s) through the matrix to construct a
+                        formatted alignment.
+                    </li>
                 </ol>
-                Further details can be found
+                Details of step 3:<br>
+                Fill in the score of each cell starting in the upper left most
+                unfilled cell and continuing right through that row before
+                dropping down a row and starting again in the left most unfilled
+                cell of the new row. To compute the score of each individual cell
+                we actually compute three separate scores and take the max. To
+                compute these scores we do the following:
+                <ol>
+                    <li>
+                        Look to the cell to the left and add its score to
+                        the gap score since moving up constitutes a gap in
+                        the alignment. Store the result.
+                    </li>
+                    <li>
+                        Look to the cell above and add its score to the gap
+                        score since moving up also constitutes a gap in the
+                        alignment. Store this result as well.
+                    </li>
+                    <li>
+                        Look to the cell diagonally up and left and note
+                        its score.
+                        Compare the respective characters from both sequences
+                        of the cell we are determining the score of. If they
+                        match add the match score to the noted score and if
+                        they don't add the mismatch score. Store this result.
+                    </li>
+                    <li>
+                        Lastly, we note where the filled in score came from with
+                        pointers to that cell (left, up, or diagonally left). If
+                        there was a tie in the max score then we store all the
+                        pointers. These pointers allow for recursive traceback
+                        in step 4.
+                    </li>
+
+                </ol>
+                Further details can be found on Wikipedia
                 <a href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm" target="_blank"
                     rel="noopener noreferrer">here</a>.
                 </p>
