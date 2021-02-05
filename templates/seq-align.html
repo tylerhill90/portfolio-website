@@ -21,15 +21,16 @@
 
 <body>
     <h1>Visualizing Sequence Alignments</h1>
+    <p id="note">For display purposes the sequence character limit is capped at 15.</p>
     <div class="container">
 
         <div class="input-form">
 
             <form autocomplete="off" id="seqAlignForm">
                 <label for="seq1"><strong>First Sequence</strong></label><br>
-                <input type="text" name="seq1" value="AATCG" maxlength="20" required><br><br>
+                <input type="text" name="seq1" value="AATCG" maxlength="15" required><br><br>
                 <label for="seq2"><strong>Second Sequence</strong></label><br>
-                <input type="text" name="seq2" value="AACG" maxlength="20" required><br>
+                <input type="text" name="seq2" value="AACG" maxlength="15" required><br>
                 <br>
                 <label><strong>Algorithm</strong></label><br>
                 <input type="radio" id="sw" name="algorithm" value="Smith-Waterman" checked>
@@ -39,13 +40,13 @@
                 <br>
                 <label><strong>Scoring Schema</strong></label><br>
                 <label>Match</label><br>
-                <input type="range" id="scoring match" name="match" min="1" max="10" value="1" step="1"
+                <input type="range" id="scoring match" name="match" min="1" max="5" value="1" step="1"
                     onchange="this.nextElementSibling.value = this.value"><output>1</output><br>
                 <label>Mismatch</label><br>
-                <input type="range" id="scoring mismatch" name="mismatch" min="-10" max="-1" value="-1" step="1"
+                <input type="range" id="scoring mismatch" name="mismatch" min="-5" max="-1" value="-1" step="1"
                     onchange="this.nextElementSibling.value = this.value"><output>-1</output><br>
                 <label>Gap</label><br>
-                <input type="range" id="scoring gap" name="gap" min="-10" max="-1" value="-2" step="1"
+                <input type="range" id="scoring gap" name="gap" min="-5" max="-1" value="-2" step="1"
                     onchange="this.nextElementSibling.value = this.value"><output>-2</output><br>
                 <br>
                 <button>Align Sequences</button>
@@ -68,10 +69,56 @@
 
         <div class="matrix">
             <h3>Matrix Results</h3>
-            <div class="matrix-container" id="matrix-container"></div>
+            <div class="matrix-container" id="matrix-container">
+                <p>Click "Align Sequences" to see the scoring matrix.</p>
+            </div>
         </div>
 
-        <div class="algo-explanations"></div>
+        <div class="algo-explain">
+            <div id="smith-waterman">
+                <h3>Smith-Waterman Algorithm</h4>
+                    <p>
+                        This alignment algorithm performs local sequence alignment.
+                        Locally aligned sequences optimize for regions of higher
+                        sequence similarity over trying to align the entirety of both
+                        sequences.<br>
+                        <br>
+                        The general algorithm strategy is as follows:
+                    <ol>
+                        <li>Determine the scoring scheme.</li>
+                        <li>Construct the scoring matrix and initialize the first row and column with 0's.</li>
+                        <li>Calculate the rest of the scoring matrix.</li>
+                        <li>Traceback recursively from the highest score(s) in the matrix until a score of zero is
+                            reached.</li>
+                    </ol>
+                    Further details can be found
+                    <a href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm" target="_blank"
+                        rel="noopener noreferrer">here</a>.
+                    </p>
+            </div>
+
+            <div id="needleman-wunsch">
+                <h3>Needleman-Wunsch Algorithm</h3>
+                <p>
+                    This alignment algorithm performs global sequence alignment.
+                    Globally aligned sequences align the entirety of both sequences
+                    no matter the amount of gap between characters.<br>
+                    <br>
+                    The general algorithm startegy is as follows:
+                <ol>
+                    <li>Determine the scoring scheme.</li>
+                    <li>Construct the scoring matrix and initialize the first row and column with the gap score times
+                        the respective sequence position.</li>
+                    <li>Calculate the rest of the scoring matrix.</li>
+                    <li>Traceback recursively from the bottom right corner of the matrix to the top left.</li>
+                </ol>
+                Further details can be found
+                <a href="https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm" target="_blank"
+                    rel="noopener noreferrer">here</a>.
+                </p>
+                </p>
+            </div>
+        </div>
 
     </div>
 
