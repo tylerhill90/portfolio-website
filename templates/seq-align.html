@@ -104,42 +104,42 @@
                     </ol>
                     </ol>
                     Details of step 3:<br>
-                    Fill in the score of each cell starting in the upper left most
-                    unfilled cell and continuing right through that row before
-                    dropping down a row and starting again in the left most unfilled
-                    cell of the new row. To compute the score of each individual cell
-                    we actually compute three separate scores and take the max. To
-                    compute these scores we do the following:
+                    To compute the score of each individual cell
+                    we actually compute three separate scores and take the max
+                    or zero, whatever is higher.
+                    To compute these scores we do the following:
                     <ol>
                         <li>
-                            Look to the cell to the left and add its score to
-                            the gap score since moving up constitutes a gap in
-                            the alignment. Store the result.
+                            Compare the i<sup>th</sup> character from the first
+                            sequence and the j<sup>th</sup> character from the
+                            second sequence based on the position in the matrix we
+                            are determining the score of. If they match note the
+                            match score and if they don't note the
+                            mismatch score. Now look to the cell diagonally up and
+                            left and add its score to the match/mismatch score you
+                            noted. Store this result.
                         </li>
                         <li>
-                            Look to the cell above and add its score to the gap
-                            score since moving up also constitutes a gap in the
-                            alignment. Store this result as well.
+                            Look to the cell to the left. Add its score to
+                            the gap score since moving laterally in the matrix
+                            constitutes a gap in the alignment. Store the result.
                         </li>
                         <li>
-                            Look to the cell diagonally up and left and note
-                            its score.
-                            Compare the respective characters from both sequences
-                            of the cell we are determining the score of. If they
-                            match add the match score to the noted score and if
-                            they don't add the mismatch score. Store this result.
+                            Look to the cell above. Add its score to the gap
+                            score since moving vertically also constitutes a gap in
+                            the alignment. Store this result.
                         </li>
                         <li>
                             Take the max score of the three results computed above.
-                            If the max is less than 0 we actually take a score of
-                            0 instead and then fill in the matrix cell with this value.
+                            If the max is less than 0 we take a score of
+                            0 instead.
                         </li>
                         <li>
                             Lastly, we note where the filled in score came from with
                             pointers to that cell (left, up, or diagonally left). If
                             there was a tie in the max score then we store all the
                             relevant pointers. These pointers allow for recursive
-                            traceback in step 4.
+                            traceback.
                         </li>
                     </ol>
 
@@ -177,37 +177,39 @@
                     </li>
                 </ol>
                 Details of step 3:<br>
-                Fill in the score of each cell starting in the upper left most
-                unfilled cell and continuing right through that row before
-                dropping down a row and starting again in the left most unfilled
-                cell of the new row. To compute the score of each individual cell
+                To compute the score of each individual cell
                 we actually compute three separate scores and take the max. To
                 compute these scores we do the following:
                 <ol>
                     <li>
-                        Look to the cell to the left and add its score to
-                        the gap score since moving up constitutes a gap in
-                        the alignment. Store the result.
+                        Compare the i<sup>th</sup> character from the first
+                        sequence and the j<sup>th</sup> character from the
+                        second sequence based on the position in the matrix we
+                        are determining the score of. If they match note the
+                        match score and if they don't note the
+                        mismatch score. Now look to the cell diagonally up and
+                        left and add its score to the match/mismatch score you
+                        noted. Store this result.
                     </li>
                     <li>
-                        Look to the cell above and add its score to the gap
-                        score since moving up also constitutes a gap in the
-                        alignment. Store this result as well.
+                        Look to the cell to the left. Add its score to
+                        the gap score since moving laterally in the matrix
+                        constitutes a gap in the alignment. Store the result.
                     </li>
                     <li>
-                        Look to the cell diagonally up and left and note
-                        its score.
-                        Compare the respective characters from both sequences
-                        of the cell we are determining the score of. If they
-                        match add the match score to the noted score and if
-                        they don't add the mismatch score. Store this result.
+                        Look to the cell above. Add its score to the gap
+                        score since moving vertically also constitutes a gap in
+                        the alignment. Store this result.
                     </li>
                     <li>
-                        Lastly, we note where the filled in score came from with
+                        Take the max score of the three results computed above.
+                    </li>
+                    <li>
+                        Lastly, we note where the score came from with
                         pointers to that cell (left, up, or diagonally left). If
                         there was a tie in the max score then we store all the
-                        pointers. These pointers allow for recursive traceback
-                        in step 4.
+                        relevant pointers. These pointers allow for recursive
+                        traceback.
                     </li>
 
                 </ol>
