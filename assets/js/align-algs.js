@@ -332,7 +332,7 @@ function buildAlignmentsEl(seq1, seq2, buildPaths) {
 function highlightMatrix() {
     // Get the path that was clicked
     var alignment = this.classList;
-    path_n = parseInt(alignment[1].slice(-1));
+    path_n = parseInt(alignment[1].match(/\d+/));
     var path = allPaths[path_n]
 
     // Clear any previously selected alignment
@@ -368,7 +368,7 @@ function highlightMatrix() {
 
 
 // Generate the matrix element
-function buildMatrixEl(seq1, seq2, matrix, buildPaths) {
+function buildMatrixEl(seq1, seq2, matrix) {
     // Reset the matrix element
     matrixContainer = document.getElementById('matrix-container');
     matrixContainer.innerHTML = '';
